@@ -4,3 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --turquesa: rgb(31, 248, 230);
+    --negro: #303030;
+}
+::selection {
+    background-color: var(--turquesa);
+}

@@ -1,19 +1,23 @@
 <div class="home-container">
-	<div class="home">
-		<div class="bici-home">
-			<figure>
-				<img src="../../assets/img/bicicleta1.png" alt="biciHome">
-			</figure>
-		</div>
+	<div class="menu">
+		<ul>
+			<li><a href="" [routerLink]="">Inicio</a></li>
+			<li><a href="" [routerLink]="">Catalogo</a></li>
+			<li><a href="" [routerLink]="">Contacto</a></li>
+			<li><a href="" [routerLink]="['../login']">Iniciar Sesion</a></li>
+		</ul>
 	</div>
+	<header class="header">
+		<div class="header1 headers" #headers></div>
+		<div class="header2 headers" style="visibility: hidden; opacity: 0"#headers></div>
+		<div class="header3 headers" style="visibility: hidden; opacity: 0"#headers></div>
+	</header>
+
 	<div class="home-info">
-		<h1>Bicycle Shop</h1>
-		<div>
-			<h2>¿Necesitas una buena bicicleta?</h2>
-			<p>En Bicycle Shop encontraras una bicicleta a tu medida, quieras tenerla contigo de aqui en adelante o por un tiempo</p>
-		</div>
-		<div class="button">
-			<button>Catalogo</button>
-		</div>
+		<h1>Fast Bike</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fugiat excepturi consequatur commodi nam soluta doloremque eius dolores quod ipsum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae incidunt quia dolore, quo ut ab ea ex voluptates eum odio temporibus corrupti deserunt ipsa laboriosam perspiciatis, assumenda facere iste quos rerum similique aperiam distinctio voluptas cum debitis. Consequatur, dolore cum!
+		</p>
+		<button>Catalogo</button>
 	</div>
 </div>

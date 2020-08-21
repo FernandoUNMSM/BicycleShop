@@ -1,0 +1,59 @@
+<div class="login-container">
+	<div class="tabs">
+		<button class="tab-active" (click)="abrirLogin()">Login</button>
+		<button (click)="abrirRegistro()">Registrate</button>
+		<div class="line" #line></div>
+	</div>
+	<div class="loginBody">
+		<div class="login" #login>
+			<form action="POST">
+				<div class="uc usuario">
+					<label for="usuario">Usuario</label>
+					<input type="text" name="usuario" placeholder="Usuario" autocomplete="off"  required #myUser>
+				</div>	
+				<div class="uc contrasena">
+					<label for="Contraseña">Contraseña</label>
+					<input type="password" name="" id="" placeholder="Contraseña" #myPsw required>
+				</div>
+				<button type="sumbit">Ingresar</button>
+			</form>
+		</div>
+		<div class="registro" #registro>
+			<form action="">
+				<div class="uc usuario">
+					<input type="text" name="usuario" placeholder="Nombre y apellido" autocomplete="off" >
+				</div>
+				<div class="uc email">
+					<input type="email" name="email" placeholder="e-mail" autocomplete="off" 
+					>
+				</div>
+				<div class="uc usuario">
+					<input type="text" name="usuario" placeholder="DNI" autocomplete="off" >
+				</div>
+				<div class="uc password">
+					<input type="password" name="password" placeholder="Contraseña" >
+				</div>
+				<div class="uc password2">
+					<input type="password" name="password" placeholder="Confirmar Contraseña">
+				</div>
+				<button type="button">Registrarse</button>
+			</form>
+		</div>
+	</div>
+</div>
+	<div class="returnHome">
+		<a [routerLink]="['../home']">Volver al Home</a>
+</div>
+
+<div class="incorrecto-container" #incorrecto>
+	<div class="incorrecto">
+	<div class="datos">
+		<h1>Datos Incorrectos</h1>
+		<p>Vuelva a ingresar sus datos</p>
+	</div>
+	<div class="equis">
+		<!-- <fa-icon [icon]="faTimes"></fa-icon> -->
+	</div>
+	<button>Cerrar</button>
+	</div>
+</div>
