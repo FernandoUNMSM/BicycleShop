@@ -54,3 +54,44 @@
 .tabs-container button:hover{
     color: var(--turquesa);
 }
+.catalogo-container > .catalogo {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 70px;
+    justify-items: center;
+}
+.catalogo .bicicleta{
+    background-color: #fff;
+    width: 70%;
+    padding: 20px 15px 10px;
+    text-align: right;
+}
+.catalogo .bicicleta h2{
+    text-align: left;
+    color: var(--negro);
+}
+.catalogo .bicicleta figure{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.catalogo .bicicleta img{
+    width: 100%;
+}
+.catalogo .bicicleta button {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 25px;
+    color: var(--turquesa);
+    margin-top: 50px;
+    font-size: .8em;
+    transition: .3s;
+}
+.catalogo .bicicleta button:hover {
+    color: #fff;
+}
