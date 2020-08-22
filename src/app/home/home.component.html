@@ -1,8 +1,8 @@
 <div class="home-container">
 	<div class="menu">
 		<ul>
-			<li><a href="" [routerLink]="">Inicio</a></li>
-			<li><a href="" [routerLink]="">Catalogo</a></li>
+			<li><a href="" [routerLink]="['../home']" class="home">Inicio</a></li>
+			<li><a href="" [routerLink]="['../catalogo']">Catalogo</a></li>
 			<li><a href="" [routerLink]="">Contacto</a></li>
 			<li><a href="" [routerLink]="['../login']">Iniciar Sesion</a></li>
 		</ul>
@@ -15,9 +15,9 @@
 
 	<div class="home-info">
 		<h1>Fast Bike</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fugiat excepturi consequatur commodi nam soluta doloremque eius dolores quod ipsum!
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae incidunt quia dolore, quo ut ab ea ex voluptates eum odio temporibus corrupti deserunt ipsa laboriosam perspiciatis, assumenda facere iste quos rerum similique aperiam distinctio voluptas cum debitis. Consequatur, dolore cum!
+		<p>En <span>Fast Bike </span>tenemos como mision hacer que las personas eligan usar una bicicletas antes que un auto. Por eso nos dedicamos a dar un servicio de primera a nuestros usuario. En nuestro catalogo encontraras bicicletas de todo tipo desde montañeras hasta vintage. 
+		<br><span>¿Que dices, te animas a ver?  </span>
 		</p>
-		<button>Catalogo</button>
+		<button><a href="" [routerLink]="['../catalogo']">Catalogo</a></button>
 	</div>
 </div>
