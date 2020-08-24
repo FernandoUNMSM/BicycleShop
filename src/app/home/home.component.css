@@ -1,5 +1,6 @@
 *{
     font-family: 'Poppins', sans-serif;
+    transition: .3s;
 }
 .container-oscuro {
     width: 100%;
@@ -16,24 +17,32 @@
     align-items: center;
     color: #fff;
 }
+.header-info h1 {
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0 10px;
+}
 .header-info span{
     color: var(--turquesa);
     display: none;
+    letter-spacing: 0px;
 }
 .home-container {
-    /* width: 100vw; */
     height: 100vh;
     display: block;
     position: relative;
 }
-.menu {
+/* .menu {
     position: fixed;
     width: 100%;
-    /* background-color: rgba(49, 46, 46, 1); */
     z-index: 100;
     text-align: right;
-    /* padding-right: 200px;     */
     transition: .3s;
+}
+.menucanvas {
+    display: none;
 }
 .menu.on {
     background-color: #fff;
@@ -64,7 +73,7 @@
 
 .menu ul li a.home {
     color: var(--turquesa);
-}
+} */
 .header {
     width: 100%;
     height: 100%;
@@ -146,8 +155,8 @@
     line-height: 0;
     position: relative;
     text-align: center;
-  }
-  .mapa-container .info-container {
+}
+.mapa-container .info-container {
     display: block;
     position: absolute;
     top: 0;
@@ -156,13 +165,13 @@
     background-color: rgba(0,0,0,.7);
     display: flex;
     transition: .4s ease all;
-  }
-  .mapa-container .info-container .sombra {
+}
+.mapa-container .info-container .sombra {
     margin: auto;
     overflow: hidden;
     position: relative;
-  }
-  .mapa-container .info-container .caja {
+}
+.mapa-container .info-container .caja {
     line-height: 1.5;
     background-color: var(--negro);
     padding: 50px 25px;
@@ -170,11 +179,11 @@
     transition: .4s ease all;
     margin-right: 30px;
     margin-left: 30px;
-  }
-  .mapa-container .info-container .sombra .caja {
+}
+.mapa-container .info-container .sombra .caja {
     color: white;
-  }
-  .mapa-container .info-container .sombra .caja h1{
+}
+.mapa-container .info-container .sombra .caja h1{
     font-weight: 400;
     width: 60%;
     text-transform: uppercase;
@@ -185,15 +194,15 @@
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-   }
-  .mapa-container .info-container .sombra .caja p{
+}
+.mapa-container .info-container .sombra .caja p{
     font-size: 1.1em;
     font-family: 'Bree Serif', serif;
-  }
-  .mapa-container .info-container .sombra .caja p:first-of-type{
+}
+.mapa-container .info-container .sombra .caja p:first-of-type{
     margin-bottom: 10px;
-  }
-  .mapa-container .info-container .sombra button{
+}
+.mapa-container .info-container .sombra button{
     border: 2px solid var(--turquesa);
     background-color: transparent;
     color: white;
@@ -208,25 +217,79 @@
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-  }
-  .mapa-container .info-container .sombra button:hover{
+}
+.mapa-container .info-container .sombra button:hover{
     color: var(--turquesa);
-  }
+}
   /* Mapa visible*/
-  .mapa-container .info-0 {
+.mapa-container .info-0 {
     height: 0;
     line-height: 0;
-  }
-  .mapa-container .info-container .info-0 {
+}
+.mapa-container .info-container .info-0 {
     line-height: 0;
     height: 0;
     transform: translateY(-180%);
-  }
-  .mapa-container .info-container .sombra .button-on {
+}
+.mapa-container .info-container .sombra .button-on {
     background-color: var(--negro);
     border: 2px solid var(--negro);
     transform: translate(-50%, -100px);
-  } 
+} 
   /*---------------------*/
   /* MAPA FIN */
   /*---------------------*/
+
+@media screen and (max-width: 900px){
+    .mapa-container .info-container .sombra .caja h1 {
+        width: inherit;
+    }
+}
+/* @media screen and (max-width: 800px){
+    .menu {
+        top: 0;
+        bottom: 0;
+        background-color: #fff;
+        width: 150px;
+        right: 0;
+        transform: translateX(100%);
+        z-index: 1001;
+    }
+    .burguer {
+        display: block;
+        position: absolute;
+        color: #fff;
+        z-index: 1000;
+        cursor: pointer;
+        right: 0;
+        margin: 20px 40px;
+        font-size: 2em;
+    }
+    .menuoff {
+        display: block;
+        text-align: center;
+        font-size: 2em;
+        margin-top: 20px;
+    }
+    .menuoff fa-icon {
+        cursor: pointer;
+    }
+    .menu.menuon{
+        transform: initial;
+    }
+    .menu.on {
+        background-color: #fff;
+    }
+    .menu ul li {
+        width: 100%;
+        margin: 0;
+        cursor: pointer;
+    }
+    .menu ul li:hover {
+        background-color: var(--negro);
+    }
+    .menu ul li a {
+        color: var(--negro);
+        padding: 0;
+    }
+} */

@@ -12,9 +12,21 @@
     background-color: var(--turquesa);
 }
 .titulo {
-    margin: 20px 100px 5px;
+    padding: 60px 100px 35px;
 }
 .titulo h1 {
     color: #fff;
     font-size: 3em;
+}
+@media screen and (max-width: 800px){
+    .titulo {
+        /* margin-top: 0; */
+        padding-top: 10px;
+        padding-left: 50px;
+    }
+}
+@media screen and (max-width: 400px){
+    .titulo {
+        padding-left: 20px;
+    }
 }

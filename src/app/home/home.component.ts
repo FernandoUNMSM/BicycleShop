@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild("menu") menu:ElementRef;
+  // @ViewChild("menu") menu:ElementRef;
   constructor(private elem: ElementRef) { }
 
   ngOnInit(): void {
@@ -54,14 +55,23 @@ export class HomeComponent implements OnInit {
             }
         }
     }
-    window.onscroll = () => {
-      if (window.pageYOffset > 0) {
-        this.menu.nativeElement.classList.add('on');
-      }
-      else {
-        this.menu.nativeElement.classList.remove('on');
-      }
-    }
+    // window.onscroll = () => {
+    //   if (window.pageYOffset > 0) {
+    //     this.menu.nativeElement.classList.add('on');
+    //   }
+    //   else {
+    //     this.menu.nativeElement.classList.remove('on');
+    //   }
+    // }
   }
+  // menuCanvasOn(){
+  //   this.menu.nativeElement.classList.add('menuon');
+  // }
+  // menuCanvasOff(){
+  //   this.menu.nativeElement.classList.remove('menuon');
+  // }
 
+
+  // faBars = faBars;
+  // faTimes = faTimes;
 }
