@@ -6,9 +6,9 @@
         <fa-icon [icon]="faTimes" (click)="menuCanvasOff()"></fa-icon>
     </div>
     <ul>
-        <li><a href="" [routerLink]="['../home']" class="home">Inicio</a></li>
-        <li><a href="" [routerLink]="['../catalogo']">Catalogo</a></li>
-        <li><a href="" [routerLink]="">Contacto</a></li>
-        <li><a href="" [routerLink]="['../login']">Iniciar Sesion</a></li>
+        <li><a href="" [routerLink]="['../home']" [routerLinkActive]="['home']">Inicio</a></li>
+        <li><a href="" [routerLink]="['../catalogo']" [routerLinkActive]="['home']">Catalogo</a></li>
+        <li><a href="" [routerLink]="['../contacto']" [routerLinkActive]="['home']">Contacto</a></li>
+        <li><a href="" [routerLink]="['../login']" [routerLinkActive]="['home']">Iniciar Sesion</a></li>
     </ul>
 </div>

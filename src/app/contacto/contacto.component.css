@@ -1,0 +1,128 @@
+.container-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background-color: var(--negro);
+  }
+  .container-contacto .contacto {
+    width: 80%;
+    padding: 20px;
+  }
+  .contacto h2 {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    color: var(--turquesa);
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .contacto .row100 {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-gap: 20px;
+  }
+  .contacto .row100 .col {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: .5s;
+  }
+  .contacto .row100 .inputBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: var(--turquesa);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+  .contacto .row100 .inputBox input,
+  .contacto .row100 .inputBox.textarea textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+  }
+  .contacto .row100 .inputBox .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: .5s;
+    pointer-events: none;
+    font-family: 'Poppins', sans-serif;
+  
+  }
+  .contacto .row100 .inputBox input:focus + .text,
+  .contacto .row100 .inputBox input:valid + .text{
+    top: -35px;
+    left: -10px;
+  }
+  .contacto .row100 .inputBox .line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--turquesa);
+    transition: .5s;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .contacto .row100 .inputBox input:focus ~ .line,
+  .contacto .row100 .inputBox input:valid ~ .line{
+    height: 100%;
+  }
+  .contacto .row100 .inputBox.textarea{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+  }
+  .contacto .row100 .inputBox.textarea textarea{
+    height: 100%;
+    resize: none;
+  }
+  .contacto .row100 .inputBox textarea:focus + .text,
+  .contacto .row100 .inputBox textarea:valid + .text{
+    top: -35px;
+    left: -10px;
+  }
+  .contacto .row100 .inputBox textarea:focus ~ .line,
+  .contacto .row100 .inputBox textarea:valid ~ .line{
+    height: 100%;
+  }
+  /* .contacto .row100 input:-internal-autofill-selected {
+    background-color: var(--turquesa);
+  } */
+  input[type="submit"] {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: var(--turquesa);
+    color: var(--negro);
+    font-size: 18px;
+    border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 3px solid var(--turquesa);
+    transition: .3s;
+  }
+  input[type="submit"]:hover {
+    background: var(--negro);
+    color:  var(--turquesa) ;
+  }

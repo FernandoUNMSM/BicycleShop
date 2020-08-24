@@ -1,3 +1,6 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
 .menu {
     position: fixed;
     width: 100%;
