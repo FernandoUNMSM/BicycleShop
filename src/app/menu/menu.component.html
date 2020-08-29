@@ -9,6 +9,25 @@
         <li><a href="" [routerLink]="['../home']" [routerLinkActive]="['home']">Inicio</a></li>
         <li><a href="" [routerLink]="['../catalogo']" [routerLinkActive]="['home']">Catalogo</a></li>
         <li><a href="" [routerLink]="['../contacto']" [routerLinkActive]="['home']">Contacto</a></li>
-        <li><a href="" [routerLink]="['../login']" [routerLinkActive]="['home']">Iniciar Sesion</a></li>
+        <div class="user" style="display: inline-block;">
+            <div class="userNone" id="userMenu" *ngIf="!userState">
+                <li><a href="" [routerLink]="['../login']" [routerLinkActive]="['home']" >Iniciar Sesion</a></li>
+            </div>
+            <div class="userOn" id="userOn" alt="Cerrar Sesion" (click)="mostrarPerfil()" *ngIf="userState">
+                <p>{{user.name}}</p>
+            </div>
+        </div>
     </ul>
+</div>
+ 
+<div class="perfil" *ngIf="userState" #perfil>
+    <fa-icon [icon]="faTimes" (click)="mostrarPerfil()" class="perfilOff"></fa-icon>
+    <div class="perfilInfo">
+        <p><span>Nombre: </span><br>{{user.name}}</p>
+        <p><span>DNI: </span><br>{{user.dni}}</p>
+        <p><span>E-mail: </span><br>{{user.email}}</p>    
+    </div>
+    <div class="button">
+        <button (click)="cerrarSesion()">Cerrar Sesion</button>
+    </div>
 </div>

@@ -8,11 +8,15 @@
     --turquesa: rgb(31, 248, 230);
     --negro: #303030;
 }
+body {
+    background-color: rgb(30, 31, 31);
+}
 ::selection {
     background-color: var(--turquesa);
 }
 .titulo {
     padding: 60px 100px 35px;
+    font-family: 'Poppins', sans-serif;
 }
 .titulo h1 {
     color: #fff;

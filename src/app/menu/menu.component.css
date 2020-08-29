@@ -41,13 +41,80 @@
 .menu ul li a.home {
     color: var(--turquesa);
 }
+.userNone {
+    display: inline-block;
+}
+.userOn {
+    /* display: none; */
+    /* background-color: #fff; */
+    padding: 15px 10px;
+    margin: 0 20px;
+    width: 100px;
+    color: var(--turquesa);
+    cursor: pointer;
+}
+.perfil {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    background-color: var(--negro);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: .3s;
+    border-right: 2px solid #FFF;
+}
+.perfil p span {
+    color: var(--turquesa);
+    font-size: 1.3em;
+}
+.perfil p {
+    color: #FFF;
+    margin-bottom: 20px;
+}
+.perfilOn{
+    transform: none;
+}
+.perfil .button button {
+    border: none;
+    outline: none;
+    background-color: var(--turquesa);
+    color: var(--negro);
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: .3s;
+    font-size: 1.1em;
+}
+.perfil .button button:hover {
+    background-color: #fff;
+}
+.perfilOff {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 800px){
     .menu {
         top: 0;
         bottom: 0;
         background-color: #fff;
-        width: 150px;
+        width: 250px;
         right: 0;
         transform: translateX(100%);
         z-index: 1001;
@@ -90,4 +157,24 @@
         color: var(--negro);
         padding: 0;
     }
+    .userOn {
+        /* display: none; */
+        /* background-color: #fff; */
+        padding: 15px 10px;
+        margin: 0;
+        width: 100%;
+        color: var(--turquesa);
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 680px){
+    .perfil {
+        width: 100%;
+        border: none;
+    }
+    
+    .perfilOff {
+        display: initial;
+    }
+
 }

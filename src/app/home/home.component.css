@@ -62,9 +62,7 @@
     background-attachment: fixed;
 }
 
-.home-info {
-    top: 50%;
-    left: 10%;
+.home-info, .contacto-info {
     background-color: rgba(49, 46, 46, 1);
     color: #FFF;
     text-align: center;
@@ -73,18 +71,18 @@
     justify-content: space-between;
     align-items: center;
 }
-.home-info h1{
+.home-info h1, .contacto-info h1{
     margin-top: 20px;
     text-transform: uppercase;
     color: var(--turquesa);
     font-size: 400%;
 }
-.home-info p{
+.home-info p, .contacto-info p{
     margin: 10px 40px 30px;
     padding: 35px 0;
     text-align: justify;
 }
-.home-info button{
+.home-info button, .contacto-info button{
     padding: 10px 50px;
     font-size: 1.2em;
     border: none;
@@ -94,17 +92,30 @@
     background-color: #1F1F1F;
     margin-bottom: 40px;
 }
-.home-info button a{
+.home-info button a, .contacto-info button a{
     color: var(--turquesa);
     transition: .3s;
     text-decoration: none;
 }
-.home-info button:hover a{
+.home-info button:hover a, .contacto-info button:hover a{
     color: white;
 }
 .home-info span {
     color: var(--turquesa);
 }
+.contacto-info {
+    background-color: var(--turquesa);
+    height: 400px;
+    color: var(--negro);
+    justify-content: space-evenly;
+}
+.contacto-info h1{
+    color: var(--negro);
+}
+.contacto-info::selection {
+    background-color: var(--negro);
+}
+
 
 .mapa-container {
     line-height: 0;
@@ -194,6 +205,8 @@
   /*---------------------*/
   /* MAPA FIN */
   /*---------------------*/
+
+
 
 @media screen and (max-width: 900px){
     .mapa-container .info-container .sombra .caja h1 {

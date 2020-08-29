@@ -1,11 +1,13 @@
 *{
     font-family: 'Poppins', sans-serif;
     transition: .3s;
+    scroll-behavior: smooth;
 }
 .catalogo-container {
     background: linear-gradient(to bottom, var(--negro), rgb(30, 31, 31));
     width: 100%;
     padding-bottom: 100px;
+    overflow: hidden;
 }
 
 .tabs-container {
@@ -13,6 +15,8 @@
     margin: auto;
     display: flex;
     justify-content: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 16px;
 }
 .tabs-container button{
     background-color: transparent;
@@ -28,20 +32,25 @@
 .tabs-container button:hover{
     color: var(--turquesa);
 }
-.catalogo-container > .catalogo {
+.catalogo-container > .catalogo >div {
     max-width: 1500px;
     margin: auto;
+    /* display: inline-grid; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 70px;
     justify-items: center;
     grid-gap: 30px 0;
+    /* width: calc( 100% / 4); */
 }
 .catalogo .bicicleta{
     background-color: #fff;
     width: 70%;
     padding: 20px 15px 10px;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .catalogo .bicicleta h2{
     text-align: left;
@@ -56,6 +65,17 @@
 .catalogo .bicicleta img{
     width: 100%;
 }
+.catalogo .bicicleta .catalogo-info {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.catalogo .bicicleta .catalogo-info h2{
+    text-align: left;
+    width: 100%;
+}
 .catalogo .bicicleta .catalogo-info button {
     background-color: #303030;
     border: none;
@@ -64,7 +84,7 @@
     padding: 8px 25px;
     color: var(--turquesa);
     width: fit-content;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     font-size: .8em;
     transition: .3s;
 }
@@ -77,13 +97,13 @@
     }
 }
 @media screen and (max-width:1200px){
-    .catalogo-container > .catalogo{
+    .catalogo-container > .catalogo > div{
         grid-template-columns: repeat(2,1fr);
         grid-gap: 30px 0;
     }
     .catalogo .bicicleta {
-        display: flex;
-        flex-direction: column;
+        /* display: flex; */
+        /* flex-direction: column; */
         justify-content: space-between;
     }
     .catalogo .bicicleta figure {
@@ -91,7 +111,7 @@
     }
 }
 @media screen and (max-width: 750px){
-    .catalogo-container > .catalogo{
+    .catalogo-container > .catalogo > div{
         grid-template-columns: repeat(1,1fr);
     }
     .catalogo .bicicleta {
@@ -108,6 +128,7 @@
         justify-content: space-around;
         align-items: center;
         width: 40%;
+        height: inherit;
     }
     .catalogo .bicicleta .catalogo-info h2{
         text-align: center;
@@ -116,5 +137,10 @@
     .catalogo .bicicleta .catalogo-info button{
         margin-top: 0;
         font-size: .6em;
+    }
+    .tabs-container .tabs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

@@ -1,18 +1,5 @@
 <div class="home-container">
-	<!-- <div class="burguer menucanvas">
-		<fa-icon [icon]="faBars" (click)="menuCanvasOn()"></fa-icon>
-	</div>
-	<div class="menu" #menu>
-		<div class="menuoff menucanvas">
-			<fa-icon [icon]="faTimes" (click)="menuCanvasOff()"></fa-icon>
-		</div>
-		<ul>
-			<li><a href="" [routerLink]="['../home']" class="home">Inicio</a></li>
-			<li><a href="" [routerLink]="['../catalogo']">Catalogo</a></li>
-			<li><a href="" [routerLink]="">Contacto</a></li>
-			<li><a href="" [routerLink]="['../login']">Iniciar Sesion</a></li>
-		</ul>
-	</div> -->
+
 	<app-menu></app-menu>
 	<header class="header">
 		<div class="header1 headers" #headers>
@@ -43,7 +30,11 @@
 		</p>
 		<button><a href="" [routerLink]="['../catalogo']">Catalogo</a></button>
 	</div>
-
+	<div class="contacto-info">
+		<h1>Contacto</h1>
+		<p>¿Quieres una atencion mas especializada?<br>Escribenos un mail y te responderemos a la brevedad posible</p>
+		<button><a href="" [routerLink]="['../contacto']">Contacto</a></button>
+	</div>
 
 	<section class="mapa-container">
 		<div class="info-container" id="info-container">

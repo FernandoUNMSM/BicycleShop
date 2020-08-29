@@ -9,34 +9,33 @@
 			<form action="POST">
 				<div class="uc usuario">
 					<label for="usuario">Usuario</label>
-					<input type="text" name="usuario" placeholder="Usuario" autocomplete="off"  required #myUser>
+					<input type="text" name="usuario" placeholder="email" autocomplete="off" #myUser [(ngModel)]="emailL"  required>
 				</div>	
 				<div class="uc contrasena">
 					<label for="Contraseña">Contraseña</label>
-					<input type="password" name="" id="" placeholder="Contraseña" #myPsw required>
+					<input type="password" name="password" id="" placeholder="Contraseña" #myPsw [(ngModel)]="contrasenaL" required>
 				</div>
-				<button type="sumbit">Ingresar</button>
+				<button type="sumbit" (click)="getUser()">Ingresar</button>
 			</form>
 		</div>
 		<div class="registro" #registro>
-			<form action="">
+			<form action="POST">
 				<div class="uc usuario">
-					<input type="text" name="usuario" placeholder="Nombre y apellido" autocomplete="off" >
+					<input type="text" name="usuario" placeholder="Nombre y apellido" autocomplete="off" [(ngModel)]="nombre">
 				</div>
 				<div class="uc email">
-					<input type="email" name="email" placeholder="e-mail" autocomplete="off" 
-					>
+					<input type="email" name="email" placeholder="e-mail" autocomplete="off" [(ngModel)]="email">
 				</div>
-				<div class="uc usuario">
-					<input type="text" name="usuario" placeholder="DNI" autocomplete="off" >
+				<div class="uc dni">
+					<input type="text" name="usuario" placeholder="DNI" autocomplete="off" [(ngModel)]="dni">
 				</div>
 				<div class="uc password">
-					<input type="password" name="password" placeholder="Contraseña" >
+					<input type="password" name="password" placeholder="Contraseña" [(ngModel)]="contrasena">
 				</div>
 				<div class="uc password2">
 					<input type="password" name="password" placeholder="Confirmar Contraseña">
 				</div>
-				<button type="button">Registrarse</button>
+				<button type="button" (click)="createUser()">Registrarse</button>
 			</form>
 		</div>
 	</div>
