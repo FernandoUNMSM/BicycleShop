@@ -1,0 +1,19 @@
+<app-menu></app-menu>
+
+<div class="info-container">
+    <div class="info-bici">
+        <div class="text-bici">
+            <h1>Especificaciones</h1>
+            <p><span>Marca: </span>{{biciActual.marca}}</p>
+            <p><span>Modelo: </span>{{biciActual.nombre}}</p>
+            <p><span>Aro: </span>{{biciActual.aro}}</p>
+            <p *ngFor="let espe of biciActual.especificaciones">{{espe}}</p>
+            <div class="butons">
+                <button (click)="anadirCarrito(biciActual._id)">Añadir al carrito</button>
+            </div>
+        </div>
+        <figure>
+            <img src="{{biciActual.imagenURL}}" alt="">
+        </figure>
+    </div>
+</div>

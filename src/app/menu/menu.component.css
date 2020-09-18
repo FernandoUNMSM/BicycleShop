@@ -49,15 +49,23 @@
     /* background-color: #fff; */
     padding: 15px 10px;
     margin: 0 20px;
-    width: 100px;
+    /* width: 100px; */
     color: var(--turquesa);
+}
+.userOn p{
+    display: inline;
+    margin-right: 40px;
     cursor: pointer;
 }
-.perfil {
+.userOn fa-icon{
+    font-size: 2em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.perfil, .carrito {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
     width: 400px;
     background-color: var(--negro);
     z-index: 1000;
@@ -65,9 +73,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: 20px;
-    transform: translateX(-100%);
     transition: .3s;
+}
+.perfil{
+    left: 0;
     border-right: 2px solid #FFF;
+    transform: translateX(-100%);
 }
 .perfil p span {
     color: var(--turquesa);
@@ -76,6 +87,7 @@
 .perfil p {
     color: #FFF;
     margin-bottom: 20px;
+    /* display: inline; */
 }
 .perfilOn{
     transform: none;
@@ -103,11 +115,75 @@
     display: none;
 }
 
+.carrito{
+    right: 0;
+    border-left: 2px solid #FFF;
+    transform: translateX(100%);
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+.carritoOn {
+    transform: none;
+}
+.carrito fa-icon {
+    position: absolute;
+    font-size: 2em;
+    color: #fff;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+}
+.carrito > h1{    
+    font-size: 3em;
+    color: var(--turquesa);
+}
+.carrito .item-container {
+    margin-top: 20px;
+}
+.carrito .item-container .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.carrito .item-container .item:nth-of-type(n+2) {
+    border-top: 1px solid #fff;
+    margin-top: 20px;
+    padding-top: 20px;
+}
 
-
-
-
-
+.carrito .item-container .item h1{
+    font-size: 1em;
+    color: #FFF;
+}
+.carrito .item-container .item .info{
+    text-align: right;
+}
+.carrito .finalizar {
+    border-top: 2px solid #FFF;
+    margin-top: 40px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carrito .finalizar h1{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.5em;
+}
+.carrito .finalizar button {
+    border: none;
+    outline: none;
+    background-color: var(--turquesa);
+    color: var(--negro);
+    padding: 10px 20px;
+    font-size: 1em;
+    /* text-align: center; */
+    margin: 30px 0 0;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 800px){
     .menu {
@@ -134,7 +210,6 @@
         text-align: center;
         font-size: 2em;
         padding-top: 20px;
-
     }
     .menuoff fa-icon {
         cursor: pointer;
@@ -166,6 +241,14 @@
         color: var(--turquesa);
         cursor: pointer;
     }
+    .userOn p {
+        display: block;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .userOn fa-icon {
+        font-size: 3em;
+    }
 }
 @media screen and (max-width: 680px){
     .perfil {
@@ -176,5 +259,17 @@
     .perfilOff {
         display: initial;
     }
-
+    .carrito {
+        width: 100vw;
+        border: none;
+    }
+    .carrito > h1{
+        margin-left: 20px;
+    }
+    .carrito .item-container {
+        padding: 0 20px;
+    }
+    .carrito .finalizar {
+        margin: 40px 20px 10px;
+    }    
 }

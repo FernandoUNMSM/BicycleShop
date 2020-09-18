@@ -70,6 +70,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* height: 300px; */
 }
 .home-info h1, .contacto-info h1{
     margin-top: 20px;
@@ -105,10 +106,14 @@
 }
 .contacto-info {
     background-color: var(--turquesa);
-    height: 400px;
+    /* height: 350px; */
     color: var(--negro);
-    justify-content: space-evenly;
+    /* justify-content: space-around; */
+    /* padding: 80px 0; */
 }
+/* .contacto-info p { */
+    /* margin: 0; */
+/* } */
 .contacto-info h1{
     color: var(--negro);
 }
@@ -211,5 +216,8 @@
 @media screen and (max-width: 900px){
     .mapa-container .info-container .sombra .caja h1 {
         width: inherit;
+    }
+    .contacto-info h1{
+        font-size: 3em;
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { element } from 'protractor';
+import { Router } from '@angular/router';
 import { BicicletasService } from '../services/bicicletas.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { BicicletasService } from '../services/bicicletas.service';
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css']
 })
+
 export class CatalogoComponent implements OnInit {
 
   public bicicletasArray: any;
@@ -16,14 +17,12 @@ export class CatalogoComponent implements OnInit {
   public bicicletasElectricas: any;
   public bicicletasActual: any;
   constructor(
-    private bicicletasService: BicicletasService
+    private bicicletasService: BicicletasService,
+    private _router: Router
   ) { }
 
   ngOnInit(): void {
-    // this.window.pageYOffset = 0;
     this.getAllTasks();
-    // this.createTask();
-    // this.deleteTask();
   }
   getAllTasks() {
     this.bicicletasService.getAllTasks()
@@ -49,40 +48,49 @@ export class CatalogoComponent implements OnInit {
     }
   }
 
-  createTask() {
-    const bicicleta = {
-      especificaciones: ["Tipo de freno contrapedal","Tamaño del bastidor 18 centimetros","Material Acero"],
-      marca: "Benotto",
-      aro: "26",
-      nombre: "Ignition FS MTB",
-      tipo: "Vintage",
-      imagenURL: "./../assets/img/bicicletaVintage7.png",
-    }
-    this.bicicletasService.createTask(bicicleta)
-      .subscribe((newBicleta) => {
-        console.log(newBicleta);
-      })
-  }
-  deleteTask() {
-    this.bicicletasService.deleteTask('5f49792c5799b900173e0e3e')
-      .subscribe((data) => {
-        console.log(data);
-      })
+  getBici(id: any){
+    this.bicicletasService.getBici(id)
+    .subscribe((newBicleta) => {
+      var biciActual = JSON.stringify(newBicleta);
+      localStorage.setItem("biciActual", biciActual);
+      this._router.navigate(['/info']);
+    })
   }
 
-  updateTask() {
-    const bicicleta = {
-      _id: '5f4438783a7b210017f21560',
-      especificaciones: ["Piñon de 12 velocidades", "Frenos de tambor", "Cuerpo de acero inoxidable"],
-      marca: "RUSH",
-      aro: "27",
-      nombre: "RUSH xm4 Xtreme ",
-      tipo: "Montañera",
-      imagenURL: "./../assets/img/bicicleta4.png",
-    }
-    this.bicicletasService.updateTask(bicicleta)
-      .subscribe((newBicleta) => {
-        console.log(newBicleta);
-      })
-  }
+  // createTask() {
+  //   const bicicleta = {
+  //     especificaciones: ["Tipo de freno contrapedal","Tamaño del bastidor 18 centimetros","Material Acero"],
+  //     marca: "Benotto",
+  //     aro: "26",
+  //     nombre: "Ignition FS MTB",
+  //     tipo: "Vintage",
+  //     imagenURL: "./../assets/img/bicicletaVintage7.png",
+  //   }
+  //   this.bicicletasService.createTask(bicicleta)
+  //     .subscribe((newBicleta) => {
+  //       console.log(newBicleta);
+  //     })
+  // }
+  // deleteTask() {
+  //   this.bicicletasService.deleteTask('5f49792c5799b900173e0e3e')
+  //     .subscribe((data) => {
+  //       console.log(data);
+  //     })
+  // }
+
+  // updateTask() {
+  //   const bicicleta = {
+  //     _id: '5f4438783a7b210017f21560',
+  //     especificaciones: ["Piñon de 12 velocidades", "Frenos de tambor", "Cuerpo de acero inoxidable"],
+  //     marca: "RUSH",
+  //     aro: "27",
+  //     nombre: "RUSH xm4 Xtreme ",
+  //     tipo: "Montañera",
+  //     imagenURL: "./../assets/img/bicicleta4.png",
+  //   }
+  //   this.bicicletasService.updateTask(bicicleta)
+  //     .subscribe((newBicleta) => {
+  //       console.log(newBicleta);
+  //     })
+  // }
 }

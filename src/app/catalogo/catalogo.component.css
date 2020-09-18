@@ -4,7 +4,7 @@
     scroll-behavior: smooth;
 }
 .catalogo-container {
-    background: linear-gradient(to bottom, var(--negro), rgb(30, 31, 31));
+    background: var(--negro);
     width: 100%;
     padding-bottom: 100px;
     overflow: hidden;
@@ -88,7 +88,8 @@
     font-size: .8em;
     transition: .3s;
 }
-.catalogo .bicicleta button:hover {
+
+.catalogo .bicicleta .catalogo-info button:hover {
     color: #fff;
 }
 @media screen and (max-width:1300px){

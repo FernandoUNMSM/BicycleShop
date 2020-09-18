@@ -1,6 +1,5 @@
 <div class="catalogo-container">
 	<app-menu></app-menu>
-	<!-- <button (click)="createTask()">ssssssssssssss</button> -->
 	<div class="superior">
 		<div class="titulo">
 			<h1>Catalogo</h1>
@@ -22,20 +21,9 @@
 				</figure>
 				<div class="catalogo-info">
 					<h2>{{bicicleta.nombre}}</h2>
-					<button>Ver Más</button>
+					<button (click)="getBici(bicicleta._id)">Ver Más</button>
 				</div>
 			</div>
 		</div>
-		<!-- <div class="vintage" id="vintage">
-			<div class="bicicleta" *ngFor="let bicicleta of bicicletasMontaneras; let indice = index">
-				<figure>
-					<img src="{{bicicleta.imagenURL}}" alt="">
-				</figure>
-				<div class="catalogo-info">
-					<h2>{{bicicleta.nombre}}</h2>
-					<button>Ver Más</button>
-				</div>
-			</div>
-		</div> -->
 	</div>
 </div>

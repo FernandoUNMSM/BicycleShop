@@ -12,6 +12,7 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     CatalogoComponent,
     MenuComponent,
-    ContactoComponent
+    ContactoComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,10 @@ export class BicicletasService {
     const path = 'https://bicicletas-api.herokuapp.com/bicycles/';
     return this.http.get(path);
   }  
+  getBici(id: string){
+    const path = `https://bicicletas-api.herokuapp.com/bicycles/${id}`;
+    return this.http.get(path);
+  }  
 
   createTask(bicicletas: Bicicletas){
     const path = 'https://bicicletas-api.herokuapp.com/bicycles';

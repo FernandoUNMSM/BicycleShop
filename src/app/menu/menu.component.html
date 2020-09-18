@@ -1,33 +1,56 @@
 <div class="burguer menucanvas">
-    <fa-icon [icon]="faBars" (click)="menuCanvasOn()"></fa-icon>
+	<fa-icon [icon]="faBars" (click)="menuCanvasOn()"></fa-icon>
 </div>
 <div class="menu" #menu>
-    <div class="menuoff menucanvas">
-        <fa-icon [icon]="faTimes" (click)="menuCanvasOff()"></fa-icon>
-    </div>
-    <ul>
-        <li><a href="" [routerLink]="['../home']" [routerLinkActive]="['home']">Inicio</a></li>
-        <li><a href="" [routerLink]="['../catalogo']" [routerLinkActive]="['home']">Catalogo</a></li>
-        <li><a href="" [routerLink]="['../contacto']" [routerLinkActive]="['home']">Contacto</a></li>
-        <div class="user" style="display: inline-block;">
-            <div class="userNone" id="userMenu" *ngIf="!userState">
-                <li><a href="" [routerLink]="['../login']" [routerLinkActive]="['home']" >Iniciar Sesion</a></li>
-            </div>
-            <div class="userOn" id="userOn" alt="Cerrar Sesion" (click)="mostrarPerfil()" *ngIf="userState">
-                <p>{{user.name}}</p>
-            </div>
-        </div>
-    </ul>
+	<div class="menuoff menucanvas">
+		<fa-icon [icon]="faTimes" (click)="menuCanvasOff()"></fa-icon>
+	</div>
+	<ul>
+		<li><a href="" [routerLink]="['../home']" [routerLinkActive]="['home']">Inicio</a></li>
+		<li><a href="" [routerLink]="['../catalogo']" [routerLinkActive]="['home']">Catalogo</a></li>
+		<li><a href="" [routerLink]="['../contacto']" [routerLinkActive]="['home']">Contacto</a></li>
+		<div class="user" style="display: inline-block;">
+			<div class="userNone" id="userMenu" *ngIf="!userState">
+				<li><a href="" [routerLink]="['../login']" [routerLinkActive]="['home']">Iniciar Sesion</a></li>
+			</div>
+			<div class="userOn" id="userOn" alt="Cerrar Sesion" *ngIf="userState">
+				<p (click)="mostrarPerfil()">{{user.name}}</p>
+				<fa-icon [icon]="faShoppingCart" (click)="mostrarCarrito()"></fa-icon>
+			</div>
+		</div>
+	</ul>
 </div>
- 
+
 <div class="perfil" *ngIf="userState" #perfil>
-    <fa-icon [icon]="faTimes" (click)="mostrarPerfil()" class="perfilOff"></fa-icon>
-    <div class="perfilInfo">
-        <p><span>Nombre: </span><br>{{user.name}}</p>
-        <p><span>DNI: </span><br>{{user.dni}}</p>
-        <p><span>E-mail: </span><br>{{user.email}}</p>    
-    </div>
-    <div class="button">
-        <button (click)="cerrarSesion()">Cerrar Sesion</button>
-    </div>
+	<fa-icon [icon]="faTimes" (click)="mostrarPerfil()" class="perfilOff"></fa-icon>
+	<div class="perfilInfo">
+		<p><span>Nombre: </span><br>{{user.name}}</p>
+		<p><span>DNI: </span><br>{{user.dni}}</p>
+		<p><span>E-mail: </span><br>{{user.email}}</p>
+	</div>
+	<div class="button">
+		<button (click)="cerrarSesion()">Cerrar Sesion</button>
+	</div>
+</div>
+
+
+<div class="carrito" *ngIf="userState" #carrito>
+	<h1>Carrito</h1>
+	<fa-icon [icon]="faTimes" (click)="mostrarCarrito()"></fa-icon>
+	<div class="item-container">
+		<div class="item" *ngFor="let bicis of bicisCarrito">
+			<figure>
+				<img src="{{bicis.imagenURL}}" alt="" width="150px">
+			</figure>
+			<div class="info">
+				<h1>{{bicis.marca}}</h1>
+				<h1>{{bicis.nombre}}</h1>
+				<h1>Precio: S/.1000</h1>
+			</div>
+		</div>
+	</div>
+	<div class="finalizar" *ngIf="bicisCarrito.length > 0">
+		<h1><span>Subtotal: </span><span>S/. {{bicisCarrito.length*1000}}</span></h1>
+		<button>Finalizar Compra</button>
+	</div>
 </div>

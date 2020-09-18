@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu',
@@ -10,9 +10,11 @@ export class MenuComponent implements OnInit {
   public userAll: any;
   public user: any;
   public userState: boolean;
+  public bicisCarrito: Array<JSON>
   @ViewChild("menu") menu:ElementRef;
   @ViewChild("userMenu") userMenu:ElementRef;
   @ViewChild("perfil") perfil:ElementRef;
+  @ViewChild("carrito") carrito:ElementRef;
   constructor() { }
 
   ngOnInit(): void {
@@ -34,6 +36,12 @@ export class MenuComponent implements OnInit {
       this.userState = true;
       this.user = this.userAll.user;
     }
+    if("bicisCarrito" in localStorage){
+      this.bicisCarrito = [...JSON.parse(localStorage.getItem("bicisCarrito"))];
+    }else{
+      this.bicisCarrito = [];
+    }
+    console.log(this.bicisCarrito)
   }
    
   menuCanvasOn(){
@@ -44,15 +52,21 @@ export class MenuComponent implements OnInit {
   }
   mostrarPerfil(){
     this.perfil.nativeElement.classList.toggle('perfilOn');
+
     this.menu.nativeElement.classList.remove('menuon');
+    this.carrito.nativeElement.classList.remove('carritoOn');
+  }
+  mostrarCarrito(){
+    this.carrito.nativeElement.classList.toggle('carritoOn');
+
+    this.menu.nativeElement.classList.remove('menuon');
+    this.perfil.nativeElement.classList.remove('perfilOn');
   }
   cerrarSesion(){
     localStorage.setItem("usuarioActual", null);
     location.reload();
   }
-  perfilOff(){
-
-  }
   faBars = faBars;
   faTimes = faTimes;
+  faShoppingCart = faShoppingCart;
 }
